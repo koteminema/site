@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЭВАКУАТОР 24 — эвакуатор в Москве круглосуточно</title>
+<meta name="description" content="Круглосуточный эвакуатор в Москве и области. Подача от 15 минут, фиксированная цена до выезда. Телефон: +7 (918) 044-17-73.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-row">
+    <a href="#home" class="logo"><span class="beacon-dot"></span>ЭВАКУАТОР&nbsp;24</a>
+    <nav class="links" id="navLinks">
+      <a href="#home">Главная</a>
+      <a href="#order">Вызов</a>
+      <a href="#prices">Цены</a>
+      <a href="#geo">Зона</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+79180441773">+7 (918) 044‑17‑73</a>
+      <a href="#order" class="btn btn-amber" style="padding:11px 20px;">Вызвать</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ГЛАВНАЯ ================= -->
+<section id="home">
+
+  <!-- Первый экран -->
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Москва и область · 24/7</div>
+        <h1>Эвакуатор приедет<br>раньше, чем вы<br><span class="h1-last">допьёте <span>кофе</span></span></h1>
+        <p class="lead">Подача от 15 минут в пределах МКАД. Работаем с любыми авто — от седана до внедорожника, аккуратно грузим авто после ДТП.</p>
+        <div class="hero-actions">
+          <a href="#order" class="btn btn-amber">Вызвать эвакуатор</a>
+          <a href="tel:+79180441773" class="btn btn-outline">Позвонить диспетчеру</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>12&nbsp;мин</b><span>среднее время подачи</span></div>
+          <div class="hero-stat"><b>24/7</b><span>без выходных</span></div>
+          <div class="hero-stat"><b>340+</b><span>эвакуаций в месяц</span></div>
+          <div class="hero-stat"><b>4.9</b><span>рейтинг клиентов</span></div>
+        </div>
+      </div>
+      <div class="beacon-wrap">
+        <div class="beacon-visual">
+          <div class="beacon-halo" aria-hidden="true"></div>
+          <div class="beacon-rings" aria-hidden="true"></div>
+          <div class="beacon-glow"></div>
+          <div class="beacon-core" aria-hidden="true"></div>
+        </div>
+        <div class="mini-order">
+          <label for="miniPhone">Быстрый вызов — телефон</label>
+          <input type="tel" id="miniPhone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__">
+          <label class="channel-label">Как связаться</label>
+          <div class="chip-group channel-group" id="miniChannel">
+            <div class="chip active" data-channel="call">Звонок</div>
+            <div class="chip" data-channel="max">MAX</div>
+            <div class="chip" data-channel="whatsapp">WhatsApp</div>
+            <div class="chip" data-channel="telegram">Telegram</div>
+          </div>
+          <button type="button" class="btn btn-amber btn-block" id="miniCallBtn">Позвонить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Заказать эвакуатор (превью) -->
+  <div class="section">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <div class="eyebrow">Заказ онлайн</div>
+          <h2>Оформите заявку<br>за 3 шага</h2>
+        </div>
+        <a href="#order" class="btn btn-outline">Перейти к форме заказа →</a>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><h3>Точки и авто</h3><p>Укажите адрес погрузки, назначения и состояние автомобиля.</p></div>
+        <div class="card"><h3>Расчёт цены</h3><p>Стоимость считается сразу — никаких сюрпризов по приезду эвакуатора.</p></div>
+        <div class="card"><h3>Подтверждение</h3><p>Диспетчер перезвонит за 2 минуты и назовёт время подачи машины.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Преимущества -->
+  <div class="section alt">
+    <div class="container">
+      <div class="eyebrow">Почему мы</div>
+      <h2>Преимущества</h2>
+      <p class="lead">Не первый эвакуатор в вашей жизни — но, вероятно, последний, который вам понадобится искать.</p>
+      <div class="grid grid-4">
+        <div class="card"><h3>Быстрая подача</h3><p>Диспетчерская у МКАД — эвакуатор в пути уже через 3 минуты после заявки.</p></div>
+        <div class="card"><h3>Честная цена</h3><p>Стоимость фиксируется до выезда, без доплат «на месте».</p></div>
+        <div class="card"><h3>Аккуратная погрузка</h3><p>Гидравлические платформы и мягкие стропы — без повреждений кузова.</p></div>
+        <div class="card"><h3>Работаем 24/7</h3><p>Ночью, в праздники и в снегопад — эвакуаторы выезжают всегда.</p></div>
+        <div class="card"><h3>Вся Москва и область</h3><p>9 округов столицы плюс Московская область в радиусе 100 км.</p></div>
+        <div class="card"><h3>Оплата любым способом</h3><p>Наличные, карта или перевод по счёту для юрлиц.</p></div>
+        <div class="card"><h3>Работа с ДТП</h3><p>Оформим документы и аккуратно перевезём авто после аварии.</p></div>
+        <div class="card"><h3>Опытные водители</h3><p>Стаж от 5 лет, каждый прошёл аттестацию по погрузке спецтехникой.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Как это работает -->
+  <div class="section">
+    <div class="container">
+      <div class="eyebrow">Процесс</div>
+      <h2>Как это работает</h2>
+      <div class="steps" style="margin-top:48px;">
+        <div class="step"><div class="n">1</div><h4>Заявка</h4><p>Звонок, сайт, Telegram или WhatsApp — как удобно.</p></div>
+        <div class="step"><div class="n">2</div><h4>Уточнение</h4><p>Диспетчер уточняет адрес и состояние авто.</p></div>
+        <div class="step"><div class="n">3</div><h4>Выезд</h4><p>Ближайший эвакуатор выезжает, вы видите время подачи.</p></div>
+        <div class="step"><div class="n">4</div><h4>Погрузка</h4><p>Аккуратная погрузка с фиксацией на платформе.</p></div>
+        <div class="step"><div class="n">5</div><h4>Доставка</h4><p>Авто доставлено, оплата на месте любым способом.</p></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= ВЫЗВАТЬ ЭВАКУАТОР ================= -->
+<section id="order" class="section">
+  <div class="container">
+    <div class="eyebrow">Заявка</div>
+    <h2>Вызвать эвакуатор</h2>
+    <p class="lead">Заполните форму — расчёт стоимости обновляется автоматически по мере заполнения.</p>
+
+    <div class="order-shell">
+      <div class="order-card">
+
+        <!-- 2.1 / 2.2 -->
+        <div class="field-row">
+          <div class="field">
+            <label>Место погрузки</label>
+            <div class="addr-wrap">
+              <input type="text" id="fromAddr" placeholder="Адрес, где находится авто" autocomplete="off">
+              <ul class="addr-suggest" id="fromSuggest" hidden></ul>
+            </div>
+            <span class="geo-btn" onclick="useGeolocation()">📍 Определить моё местоположение</span>
+            <p class="field-hint">Геолокация работает только на HTTPS или localhost.</p>
+          </div>
+          <div class="field">
+            <label>Место назначения</label>
+            <div class="addr-wrap">
+              <input type="text" id="toAddr" placeholder="Куда доставить авто" autocomplete="off">
+              <ul class="addr-suggest" id="toSuggest" hidden></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Маршрут -->
+        <div class="field" style="margin-bottom:24px;">
+          <label>Маршрут на карте</label>
+          <div id="orderRouteMap" class="route-map">
+            <div class="route-map-placeholder" id="routeMapPlaceholder">Укажите адреса погрузки и назначения — маршрут и расстояние рассчитаются автоматически</div>
+          </div>
+        </div>
+
+        <!-- 2.4 -->
+        <div class="field" style="margin-bottom:24px;">
+          <label>Состояние автомобиля</label>
+          <div class="chip-group" id="carState">
+            <div class="chip active" data-add="0">На ходу</div>
+            <div class="chip" data-add="2000">Не на ходу (+2 000 ₽)</div>
+            <div class="chip" data-add="3000">После ДТП (+3 000 ₽)</div>
+          </div>
+        </div>
+
+        <!-- доп. параметры для расчёта -->
+        <div class="field" style="margin-bottom:24px;">
+          <label>Расстояние, км <span style="text-transform:none;color:var(--muted);font-size:11px;">(авторасчёт по адресам)</span></label>
+          <input type="number" id="distanceKm" value="" min="0">
+        </div>
+
+        <!-- Дополнительные услуги -->
+        <div class="field" style="margin-bottom:24px;">
+          <label>Дополнительные услуги <span style="text-transform:none;color:var(--muted);font-size:11px;">(можно выбрать несколько)</span></label>
+          <div class="chip-group" id="extraServices">
+            <div class="chip" data-add="2000">Запуск двигателя (+2000 ₽)</div>
+            <div class="chip" data-add="1500">Замена колеса (+1500 ₽)</div>
+          </div>
+        </div>
+
+        <!-- 2.7 -->
+        <h3 style="font-size:16px;margin:28px 0 16px;">Подтверждение заказа</h3>
+        <div class="field-row">
+          <div class="field"><label for="orderName">Имя</label><input type="text" id="orderName" autocomplete="name" placeholder="Ваше имя"></div>
+          <div class="field"><label for="orderPhone">Телефон</label><input type="tel" id="orderPhone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+        </div>
+        <div class="field" style="margin-bottom:24px;">
+          <label>Как связаться</label>
+          <div class="chip-group channel-group" id="orderChannel">
+            <div class="chip active" data-channel="call">Звонок</div>
+            <div class="chip" data-channel="max">MAX</div>
+            <div class="chip" data-channel="whatsapp">WhatsApp</div>
+            <div class="chip" data-channel="telegram">Telegram</div>
+          </div>
+        </div>
+        <button class="btn btn-amber btn-block" id="orderSubmitBtn" type="button" onclick="submitOrder()">Позвонить диспетчеру</button>
+      </div>
+
+      <!-- 2.6 расчёт стоимости -->
+      <div class="summary">
+        <h3>Расчёт стоимости</h3>
+        <div class="summary-row"><span>Погрузка</span><span id="sumLoad">5 000 ₽</span></div>
+        <div class="summary-row"><span>Разгрузка</span><span id="sumUnload">5 000 ₽</span></div>
+        <div class="summary-row"><span>Состояние</span><span id="sumState">0 ₽</span></div>
+        <div class="summary-row"><span>Расстояние</span><span id="sumDist">0 ₽</span></div>
+        <div class="summary-row"><span>Доп. услуги</span><span id="sumExtra">0 ₽</span></div>
+        <div class="summary-total"><span>Итого</span><b id="sumTotal">10 000 ₽</b></div>
+        <p style="color:var(--muted);font-size:12.5px;margin-top:10px;">Итог без километража — 10 000 ₽ (погрузка + разгрузка). Финальная цена подтверждается диспетчером.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ЦЕНЫ ================= -->
+<section id="prices" class="section">
+  <div class="container">
+    <div class="eyebrow">Стоимость</div>
+    <h2>Цены</h2>
+    <p class="lead">Стоимость складывается из базового тарифа и надбавок. Цена фиксируется до выезда.</p>
+
+    <h3 style="font-size:16px;color:var(--amber);margin-bottom:14px;">Что входит в 5 000 ₽ погрузки</h3>
+    <ul class="include-list">
+      <li>Выезд эвакуатора и работа платформы</li>
+      <li>Осмотр авто до погрузки</li>
+      <li>Фиксация на платформе стропами</li>
+      <li>Акт приёма-передачи по запросу</li>
+    </ul>
+    <p class="lead" style="margin-top:16px;margin-bottom:32px;">В 5 000 ₽ разгрузки — снятие с платформы в точке назначения. Километраж, ДТП и «не на ходу» считаются отдельно.</p>
+
+    <h3 style="font-size:16px;color:var(--amber);margin-bottom:14px;">Базовый тариф</h3>
+    <table class="price-table">
+      <tr><th>Услуга</th><th>Стоимость</th></tr>
+      <tr><td>Погрузка автомобиля</td><td class="val">5 000 ₽</td></tr>
+      <tr><td>Разгрузка автомобиля</td><td class="val">5 000 ₽</td></tr>
+      <tr><td>1 км по маршруту</td><td class="val">150 ₽</td></tr>
+      <tr><td>Авто не на ходу</td><td class="val">+2 000 ₽</td></tr>
+      <tr><td>Работа после ДТП</td><td class="val">+3 000 ₽</td></tr>
+    </table>
+
+    <h3 id="services" style="font-size:16px;color:var(--amber);margin:36px 0 14px;">Дополнительные услуги</h3>
+    <div class="grid grid-2">
+      <div class="card"><h3>Запуск двигателя</h3><p>Прикуриваем аккумулятор или заряжаем на месте выезда.</p><div class="price">от 2 000 ₽</div></div>
+      <div class="card"><h3>Замена колеса</h3><p>Установка запасного колеса или докатки прямо на дороге.</p><div class="price">от 1 500 ₽</div></div>
+    </div>
+    <p style="margin-top:28px;"><a href="#offer" class="btn btn-outline">Оферта и условия перевозки →</a></p>
+  </div>
+</section>
+
+<!-- ================= Карта ================= -->
+<section id="geo" class="section">
+  <div class="container">
+    <div class="eyebrow">География</div>
+    <h2>Карта работы</h2>
+    <p class="lead">Интерактивная карта Москвы — кликните по округу, чтобы увидеть примерное время подачи эвакуатора.</p>
+
+    <div class="geo-toolbar">
+      <span class="traffic-badge" id="trafficBadge"><span class="traffic-dot" style="background:#e2b93b;"></span>Пробки:&nbsp;<span id="trafficLevel">по данным Яндекса</span></span>
+      <span class="geo-btn" onclick="toggleTraffic()">🚦 Показать/скрыть пробки</span>
+      <span class="geo-btn" onclick="locateUser()">📍 Определить моё местоположение</span>
+    </div>
+
+    <div id="moscow-map" style="height:520px;border-radius:4px;border:1px solid var(--line);overflow:hidden;"></div>
+
+    <div class="district-list">
+      <span class="chip" onclick="flyToDistrict('cao')">ЦАО</span>
+      <span class="chip" onclick="flyToDistrict('sao')">САО</span>
+      <span class="chip" onclick="flyToDistrict('svao')">СВАО</span>
+      <span class="chip" onclick="flyToDistrict('vao')">ВАО</span>
+      <span class="chip" onclick="flyToDistrict('yuvao')">ЮВАО</span>
+      <span class="chip" onclick="flyToDistrict('yuao')">ЮАО</span>
+      <span class="chip" onclick="flyToDistrict('yuzao')">ЮЗАО</span>
+      <span class="chip" onclick="flyToDistrict('zao')">ЗАО</span>
+      <span class="chip" onclick="flyToDistrict('szao')">СЗАО</span>
+      <span class="chip" onclick="flyToDistrict('mo')">Московская область</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ОТЗЫВЫ ================= -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="eyebrow">Отзывы клиентов</div>
+    <h2>Отзывы</h2>
+
+    <div class="tabs">
+      <div class="tab active" onclick="filterReviews(this,'all')">Все отзывы</div>
+      <div class="tab" onclick="filterReviews(this,'dtp')">После ДТП</div>
+      <div class="tab" onclick="filterReviews(this,'district')">По районам</div>
+    </div>
+
+    <div class="grid grid-3" id="reviewsGrid">
+      <div class="review-card" data-cat="all district"><div class="review-top"><span class="review-name">Дмитрий К. <span class="badge-district">ЦАО</span></span><span class="stars">★★★★★</span></div><p>Заглох на Ленинградке в час пик — эвакуатор был через 18 минут, погрузили без единой царапины.</p><span class="review-date">02.08.2026</span></div>
+      <div class="review-card" data-cat="all dtp"><div class="review-top"><span class="review-name">Анна В. <span class="badge-district">ВАО</span></span><span class="stars">★★★★★</span></div><p>После ДТП забрали машину с зажатым колесом, оформили документы быстро и по-человечески всё объяснили.</p><span class="review-date">28.07.2026</span></div>
+      <div class="review-card" data-cat="all district"><div class="review-top"><span class="review-name">Игорь П. <span class="badge-district">Область</span></span><span class="stars">★★★★☆</span></div><p>Ночью вызывал эвакуатор в область — доехали без проблем, цену назвали заранее и не изменили.</p><span class="review-date">21.07.2026</span></div>
+      <div class="review-card" data-cat="all dtp district"><div class="review-top"><span class="review-name">Мария С. <span class="badge-district">ЮЗАО</span></span><span class="stars">★★★★★</span></div><p>Попала в аварию — эвакуатор аккуратно забрал деформированную машину.</p><span class="review-date">15.07.2026</span></div>
+      <div class="review-card" data-cat="all district"><div class="review-top"><span class="review-name">Роман Т. <span class="badge-district">СВАО</span></span><span class="stars">★★★★★</span></div><p>Заблокировались колёса зимой — приехал эвакуатор с ломовой погрузкой, всё решили за 30 минут.</p><span class="review-date">09.07.2026</span></div>
+      <div class="review-card" data-cat="all district"><div class="review-top"><span class="review-name">Елена Ф. <span class="badge-district">САО</span></span><span class="stars">★★★★★</span></div><p>Вежливый диспетчер, водитель приехал точно в названное время, оплатила картой на месте.</p><span class="review-date">30.06.2026</span></div>
+    </div>
+
+    <div class="order-card" style="max-width:640px;margin-top:56px;">
+      <h3 style="font-size:16px;margin-bottom:12px;">Оставить отзыв</h3>
+      <p class="lead" style="margin-bottom:20px;font-size:14.5px;">Отзыв уходит диспетчеру на модерацию и не публикуется сразу на сайте.</p>
+      <div class="field-row">
+        <div class="field"><label>Имя</label><input type="text" id="reviewName" placeholder="Ваше имя"></div>
+        <div class="field"><label>Район</label><input type="text" id="reviewDistrict" placeholder="Например, ЮАО"></div>
+      </div>
+      <div class="field">
+        <label>Оценка</label>
+        <div class="star-rating" id="starRating">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+      </div>
+      <div class="field" style="margin-bottom:14px;">
+        <label style="display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-size:13.5px;cursor:pointer;">
+          <input type="checkbox" id="reviewDtp" style="width:auto;">
+          Это отзыв про перевозку после ДТП
+        </label>
+      </div>
+      <div class="field"><label>Отзыв</label><input type="text" id="reviewText" placeholder="Расскажите, как всё прошло"></div>
+      <button class="btn btn-amber" onclick="submitReview()">Отправить отзыв</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Вопросы ================= -->
+<section id="faq" class="section alt">
+  <div class="container">
+    <div class="eyebrow">Вопросы</div>
+    <h2>Часто задаваемые вопросы</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Сколько стоит эвакуатор?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Погрузка и разгрузка — от 5 000 ₽ каждая. Итоговая стоимость зависит от расстояния и состояния авто. Точную сумму можно посчитать в разделе «Вызвать эвакуатор».</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Сколько ждать эвакуатор?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>В среднем 12–20 минут в пределах МКАД и до 40 минут за городом — время зависит от загруженности дорог и удалённости ближайшего свободного эвакуатора.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Можно ли заказать эвакуатор ночью?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Да, мы работаем круглосуточно и без выходных.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Можно ли перевезти автомобиль после ДТП?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Да, для этого используется мягкая фиксация на платформе. При необходимости поможем оформить документы для страховой компании.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Какие документы нужны?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Достаточно паспорта владельца и СТС на автомобиль. Если автомобиль перевозит не владелец — понадобится доверенность или присутствие собственника по телефону.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= КОНТАКТЫ ================= -->
+<section id="contacts" class="section">
+  <div class="container">
+    <div class="eyebrow">Связь</div>
+    <h2>Контакты</h2>
+    <div class="contact-grid">
+      <a href="tel:+79180441773" class="contact-card"><div class="ic">☎</div><h3 style="font-size:15px;">Телефон</h3><p style="color:var(--muted);margin-top:6px;">+7 (918) 044‑17‑73</p></a>
+      <a href="https://max.ru/+79180441773" target="_blank" rel="noopener" class="contact-card"><div class="ic">◆</div><h3 style="font-size:15px;">MAX</h3><p style="color:var(--muted);margin-top:6px;">+7 (918) 044‑17‑73</p></a>
+      <a href="https://t.me/bkoreshzyy" target="_blank" rel="noopener" class="contact-card"><div class="ic">✈</div><h3 style="font-size:15px;">Telegram</h3><p style="color:var(--muted);margin-top:6px;">@bkoreshzyy</p></a>
+      <a href="https://wa.me/79180441773" target="_blank" rel="noopener" class="contact-card"><div class="ic">◍</div><h3 style="font-size:15px;">WhatsApp</h3><p style="color:var(--muted);margin-top:6px;">+7 (918) 044‑17‑73</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="offer" class="section alt">
+  <div class="container">
+    <div class="eyebrow">Документы</div>
+    <h2>Оферта</h2>
+    <p class="lead">Краткие условия перевозки. Полный договор и акт выдаём по запросу при заказе.</p>
+    <div class="card" style="max-width:760px;">
+      <p>Заказывая эвакуатор, вы подтверждаете, что указали верные адреса и состояние автомобиля. Итоговая стоимость согласуется диспетчером до выезда. Погрузка повреждённого авто выполняется с фиксацией на платформе. Ответственность перевозчика страхуется. Претензии принимаются по акту осмотра до и после перевозки.</p>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" class="section">
+  <div class="container">
+    <div class="eyebrow">Данные</div>
+    <h2>Политика конфиденциальности</h2>
+    <p class="lead" style="margin-bottom:0;">Телефон, имя и адреса из заявки используем только чтобы связаться с вами и выполнить перевозку. Карты Яндекса могут обрабатывать координаты при построении маршрута. Данные не продаём третьим лицам.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Эвакуатор 24. Москва и Московская область.</span>
+    <a class="nav-phone" href="tel:+79180441773">+7 (918) 044‑17‑73</a>
+    <span>
+      <a href="#offer">Оферта</a>
+      ·
+      <a href="#privacy">Конфиденциальность</a>
+    </span>
+  </div>
+</footer>
+
+<!-- API-ключ Яндекс Карт: ограничьте его доменом сайта в кабинете developer.tech.yandex.ru -->
+<script src="https://api-maps.yandex.ru/2.1/?apikey=0e768eb5-8cb7-47e4-973c-09c001af0af7&lang=ru_RU" type="text/javascript"></script>
+<script>
+/* ---------- FAQ accordion ---------- */
+function toggleFaq(el){
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  item.parentElement.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+/* ---------- mobile nav ---------- */
+const navHeader = document.querySelector('header.nav');
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', ()=>{
+  const open = navHeader.classList.toggle('is-open');
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+navLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click', ()=> {
+    navHeader.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const DISPATCH_TEL = '+79180441773';
+const DISPATCH_WA = '79180441773';
+const DISPATCH_TG = 'bkoreshzyy';
+const DISPATCH_MAX = 'https://max.ru/+79180441773';
+
+function phoneDigits(value){
+  let d = String(value || '').replace(/\D/g,'');
+  if(d.startsWith('8')) d = '7' + d.slice(1);
+  if(d && d[0] !== '7') d = '7' + d;
+  return d.slice(0, 11);
+}
+function formatPhone(digits){
+  let out = '+7';
+  if(digits.length > 1) out += ' (' + digits.slice(1, 4);
+  if(digits.length >= 4) out += ') ' + digits.slice(4, 7);
+  if(digits.length >= 7) out += '-' + digits.slice(7, 9);
+  if(digits.length >= 9) out += '-' + digits.slice(9, 11);
+  return out;
+}
+function bindPhoneMask(el){
+  if(!el) return;
+  el.addEventListener('input', ()=>{
+    el.value = formatPhone(phoneDigits(el.value));
+  });
+  el.addEventListener('focus', ()=>{
+    if(!el.value.trim()) el.value = '+7 (';
+  });
+}
+function isValidRuPhone(value){
+  return phoneDigits(value).length === 11;
+}
+function selectedChannel(groupId){
+  const chip = document.querySelector('#' + groupId + ' .chip.active');
+  return (chip && chip.dataset.channel) || 'call';
+}
+function channelButtonLabel(channel){
+  if(channel === 'max') return 'Написать в MAX';
+  if(channel === 'whatsapp') return 'Написать в WhatsApp';
+  if(channel === 'telegram') return 'Написать в Telegram';
+  return 'Позвонить диспетчеру';
+}
+function setupChannelGroup(groupId, button){
+  const group = document.getElementById(groupId);
+  if(!group) return;
+  group.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      group.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      if(button) button.textContent = channelButtonLabel(chip.dataset.channel);
+    });
+  });
+}
+function contactDispatch(channel, text){
+  if(channel === 'call'){
+    window.location.href = 'tel:' + DISPATCH_TEL;
+    return;
+  }
+  if(channel === 'whatsapp'){
+    window.open('https://wa.me/' + DISPATCH_WA + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    return;
+  }
+  if(channel === 'telegram'){
+    if(text && navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).catch(()=>{});
+    }
+    window.open('https://t.me/' + DISPATCH_TG, '_blank', 'noopener');
+    return;
+  }
+  if(channel === 'max'){
+    if(text && navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).catch(()=>{});
+    }
+    window.open(DISPATCH_MAX, '_blank', 'noopener');
+  }
+}
+
+bindPhoneMask(document.getElementById('miniPhone'));
+bindPhoneMask(document.getElementById('orderPhone'));
+const miniCallBtn = document.getElementById('miniCallBtn');
+const orderSubmitBtn = document.getElementById('orderSubmitBtn');
+setupChannelGroup('miniChannel', miniCallBtn);
+setupChannelGroup('orderChannel', orderSubmitBtn);
+miniCallBtn.addEventListener('click', ()=>{
+  const channel = selectedChannel('miniChannel');
+  if(channel === 'call'){
+    contactDispatch('call');
+    return;
+  }
+  const phone = document.getElementById('miniPhone').value;
+  if(!isValidRuPhone(phone)){
+    alert('Укажите телефон в формате +7 (XXX) XXX-XX-XX — диспетчер перезвонит, если чат не откроется.');
+    return;
+  }
+  contactDispatch(channel, 'Прошу связаться по заявке с сайта. Телефон: ' + formatPhone(phoneDigits(phone)));
+});
+
+/* ---------- Order calculator ---------- */
+const carState = document.getElementById('carState');
+const distanceKm = document.getElementById('distanceKm');
+const extraServices = document.getElementById('extraServices');
+
+function setupChips(group){
+  group.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      group.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      calcOrder();
+    });
+  });
+}
+setupChips(carState);
+distanceKm.addEventListener('input', calcOrder);
+
+/* доп. услуги — множественный выбор: клик переключает конкретный чип, не сбрасывая остальные */
+extraServices.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    chip.classList.toggle('active');
+    calcOrder();
+  });
+});
+
+function fmt(n){ return Math.round(n).toLocaleString('ru-RU') + ' ₽'; }
+
+function calcOrder(){
+  const loadFee = 5000;
+  const unloadFee = 5000;
+  const stateAdd = parseFloat(carState.querySelector('.chip.active').dataset.add);
+  const km = parseFloat(distanceKm.value) || 0;
+  const distCost = km * 150;
+  const extraAdd = Array.from(extraServices.querySelectorAll('.chip.active'))
+    .reduce((sum, chip) => sum + parseFloat(chip.dataset.add), 0);
+
+  let subtotal = loadFee + unloadFee + stateAdd + distCost + extraAdd;
+
+  document.getElementById('sumLoad').textContent = fmt(loadFee);
+  document.getElementById('sumUnload').textContent = fmt(unloadFee);
+  document.getElementById('sumState').textContent = fmt(stateAdd);
+  document.getElementById('sumDist').textContent = fmt(distCost);
+  document.getElementById('sumExtra').textContent = fmt(extraAdd);
+  document.getElementById('sumTotal').textContent = fmt(subtotal);
+}
+calcOrder();
+
+function submitOrder(){
+  const channel = selectedChannel('orderChannel');
+  if(channel === 'call'){
+    contactDispatch('call');
+    return;
+  }
+  const name = document.getElementById('orderName').value.trim();
+  const phone = document.getElementById('orderPhone').value.trim();
+  const fromVal = fromAddrEl.value.trim();
+  const toVal = toAddrEl.value.trim();
+  if(!fromVal || !toVal){
+    alert('Укажите адреса погрузки и назначения.');
+    return;
+  }
+  if(!name){
+    alert('Укажите имя.');
+    return;
+  }
+  if(!isValidRuPhone(phone)){
+    alert('Укажите телефон в формате +7 (XXX) XXX-XX-XX');
+    return;
+  }
+  const state = carState.querySelector('.chip.active').textContent.trim();
+  const extras = Array.from(extraServices.querySelectorAll('.chip.active'))
+    .map(c => c.textContent.trim()).join(', ') || 'нет';
+  const km = distanceKm.value || 'не рассчитано';
+  const total = document.getElementById('sumTotal').textContent;
+  contactDispatch(
+    channel,
+    'Заявка на эвакуатор\n' +
+    'Имя: ' + name + '\n' +
+    'Телефон: ' + formatPhone(phoneDigits(phone)) + '\n' +
+    'Откуда: ' + fromVal + '\n' +
+    'Куда: ' + toVal + '\n' +
+    'Состояние: ' + state + '\n' +
+    'Км: ' + km + '\n' +
+    'Доп. услуги: ' + extras + '\n' +
+    'Ориентир по сайту: ' + total
+  );
+}
+
+/* ---------- Маршрут и километраж по адресам (OSM + OSRM, Яндекс как запасной геокодер) ---------- */
+const fromAddrEl = document.getElementById('fromAddr');
+const toAddrEl = document.getElementById('toAddr');
+const routeMapContainer = document.getElementById('orderRouteMap');
+const MOSCOW = { lat: 55.7558, lon: 37.6176 };
+
+let orderLeafletMap = null;
+let orderRouteLayer = null;
+let routeDebounceTimer = null;
+let suggestTimers = {};
+let routeRequestId = 0;
+
+function setRouteStatus(text, isError){
+  let status = routeMapContainer.querySelector('.route-map-status');
+  if(!text){
+    if(status) status.remove();
+    return;
+  }
+  if(!status){
+    status = document.createElement('div');
+    status.className = 'route-map-status';
+    routeMapContainer.appendChild(status);
+  }
+  status.textContent = text;
+  status.style.color = isError ? 'var(--red)' : 'var(--amber)';
+  status.style.borderColor = isError ? 'var(--red)' : 'var(--line)';
+}
+
+function destroyOrderLeafletMap(){
+  if(orderLeafletMap){
+    orderLeafletMap.remove();
+    orderLeafletMap = null;
+    orderRouteLayer = null;
+  }
+}
+
+function showRoutePlaceholder(text){
+  destroyOrderLeafletMap();
+  routeMapContainer.innerHTML = `<div class="route-map-placeholder">${text}</div>`;
+}
+
+function ensureOrderLeafletMap(){
+  if(typeof L === 'undefined') return null;
+  if(orderLeafletMap) return orderLeafletMap;
+  routeMapContainer.innerHTML = '';
+  const mapDiv = document.createElement('div');
+  mapDiv.className = 'order-leaflet';
+  routeMapContainer.appendChild(mapDiv);
+  orderLeafletMap = L.map(mapDiv, { zoomControl: true, attributionControl: false })
+    .setView([MOSCOW.lat, MOSCOW.lon], 10);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(orderLeafletMap);
+  orderRouteLayer = L.featureGroup().addTo(orderLeafletMap);
+  setTimeout(()=> orderLeafletMap && orderLeafletMap.invalidateSize(), 80);
+  return orderLeafletMap;
+}
+
+function biasToMoscow(addr){
+  return /москв|московск/i.test(addr) ? addr : addr + ', Москва';
+}
+
+function parseStoredCoords(el){
+  if(!el.dataset.coords) return null;
+  try {
+    const c = JSON.parse(el.dataset.coords);
+    if(Array.isArray(c) && c.length >= 2) return { lat: Number(c[0]), lon: Number(c[1]) };
+  } catch(e){ /* ignore */ }
+  return null;
+}
+
+async function geocodePhoton(query){
+  const url = 'https://photon.komoot.io/api/?limit=1'
+    + '&lat=' + MOSCOW.lat + '&lon=' + MOSCOW.lon
+    + '&q=' + encodeURIComponent(biasToMoscow(query));
+  const res = await fetch(url);
+  const data = await res.json();
+  const f = data && data.features && data.features[0];
+  if(!f) throw new Error('not found');
+  const [lon, lat] = f.geometry.coordinates;
+  return { lat, lon };
+}
+
+async function geocodeNominatim(query){
+  const url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=0'
+    + '&countrycodes=ru&accept-language=ru'
+    + '&q=' + encodeURIComponent(biasToMoscow(query));
+  const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+  const data = await res.json();
+  if(!data || !data[0]) throw new Error('not found');
+  return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+}
+
+function geocodeYandex(query){
+  return new Promise((resolve, reject)=>{
+    if(typeof ymaps === 'undefined') return reject(new Error('no ymaps'));
+    ymaps.ready(()=>{
+      ymaps.geocode(biasToMoscow(query), { results: 1 }).then(res=>{
+        const obj = res.geoObjects.get(0);
+        if(!obj) return reject(new Error('not found'));
+        const c = obj.geometry.getCoordinates();
+        resolve({ lat: c[0], lon: c[1] });
+      }, reject);
+    });
+  });
+}
+
+async function resolvePoint(el, val){
+  const stored = parseStoredCoords(el);
+  if(stored) return stored;
+  try { return await geocodePhoton(val); }
+  catch(e){
+    try { return await geocodeNominatim(val); }
+    catch(e2){ return await geocodeYandex(val); }
+  }
+}
+
+async function suggestAddresses(query){
+  const url = 'https://photon.komoot.io/api/?limit=6'
+    + '&lat=' + MOSCOW.lat + '&lon=' + MOSCOW.lon
+    + '&q=' + encodeURIComponent(biasToMoscow(query));
+  const res = await fetch(url);
+  const data = await res.json();
+  return (data.features || []).map(f=>{
+    const [lon, lat] = f.geometry.coordinates;
+    const p = f.properties || {};
+    const label = [p.name, p.street, p.district, p.city || p.state, p.country]
+      .filter(Boolean)
+      .filter((v, i, arr)=> arr.indexOf(v) === i)
+      .join(', ');
+    return { lat, lon, label: label || query };
+  });
+}
+
+function hideSuggest(listEl){
+  listEl.hidden = true;
+  listEl.innerHTML = '';
+}
+
+function bindAddressSuggest(inputEl, listEl){
+  inputEl.addEventListener('input', ()=>{
+    delete inputEl.dataset.coords;
+    const q = inputEl.value.trim();
+    clearTimeout(suggestTimers[inputEl.id]);
+    if(q.length < 3){ hideSuggest(listEl); debounceRoute(); return; }
+    suggestTimers[inputEl.id] = setTimeout(async ()=>{
+      try{
+        const items = await suggestAddresses(q);
+        listEl.innerHTML = '';
+        if(!items.length){ hideSuggest(listEl); debounceRoute(); return; }
+        items.forEach(item=>{
+          const li = document.createElement('li');
+          li.textContent = item.label;
+          li.addEventListener('mousedown', e=> e.preventDefault());
+          li.addEventListener('click', ()=>{
+            inputEl.value = item.label;
+            inputEl.dataset.coords = JSON.stringify([item.lat, item.lon]);
+            hideSuggest(listEl);
+            updateRoute();
+          });
+          listEl.appendChild(li);
+        });
+        listEl.hidden = false;
+      } catch(e){
+        hideSuggest(listEl);
+      }
+      debounceRoute();
+    }, 280);
+  });
+  inputEl.addEventListener('blur', ()=> setTimeout(()=> hideSuggest(listEl), 180));
+  inputEl.addEventListener('keydown', e=>{
+    if(e.key === 'Escape') hideSuggest(listEl);
+  });
+}
+
+async function fetchDrivingRoute(from, to){
+  const url = 'https://router.project-osrm.org/route/v1/driving/'
+    + from.lon + ',' + from.lat + ';' + to.lon + ',' + to.lat
+    + '?overview=full&geometries=geojson&alternatives=false';
+  const res = await fetch(url);
+  const data = await res.json();
+  if(data.code !== 'Ok' || !data.routes || !data.routes[0]) throw new Error('no route');
+  return data.routes[0];
+}
+
+function drawOrderRoute(from, to, geometry){
+  const map = ensureOrderLeafletMap();
+  if(!map) return;
+  orderRouteLayer.clearLayers();
+  const latlngs = (geometry.coordinates || []).map(c => [c[1], c[0]]);
+  const line = L.polyline(latlngs, { color:'#ffb020', weight:4, opacity:.95 });
+  const start = L.circleMarker([from.lat, from.lon], { radius:8, color:'#ffb020', fillColor:'#ffb020', fillOpacity:1, weight:2 });
+  const end = L.circleMarker([to.lat, to.lon], { radius:8, color:'#5aa9c9', fillColor:'#5aa9c9', fillOpacity:1, weight:2 });
+  start.bindTooltip('Погрузка', { permanent:false });
+  end.bindTooltip('Разгрузка', { permanent:false });
+  orderRouteLayer.addLayer(line);
+  orderRouteLayer.addLayer(start);
+  orderRouteLayer.addLayer(end);
+  map.fitBounds(orderRouteLayer.getBounds().pad(0.18));
+  setTimeout(()=> map.invalidateSize(), 80);
+}
+
+async function updateRoute(){
+  const fromVal = fromAddrEl.value.trim();
+  const toVal = toAddrEl.value.trim();
+
+  if(!fromVal || !toVal){
+    showRoutePlaceholder('Укажите адреса погрузки и назначения — маршрут и расстояние рассчитаются автоматически');
+    return;
+  }
+  if(fromVal.length < 3 || toVal.length < 3) return;
+
+  const reqId = ++routeRequestId;
+  if(!orderLeafletMap){
+    showRoutePlaceholder('Строим маршрут…');
+  }
+  setRouteStatus('Строим маршрут…', false);
+
+  try{
+    const from = await resolvePoint(fromAddrEl, fromVal);
+    const to = await resolvePoint(toAddrEl, toVal);
+    if(reqId !== routeRequestId) return;
+    const route = await fetchDrivingRoute(from, to);
+    if(reqId !== routeRequestId) return;
+    drawOrderRoute(from, to, route.geometry);
+    const km = Math.max(1, Math.round(route.distance / 1000));
+    distanceKm.value = km;
+    calcOrder();
+    setRouteStatus(km + ' км по кратчайшему маршруту', false);
+  } catch(e){
+    if(reqId !== routeRequestId) return;
+    console.error('Route failed:', e);
+    setRouteStatus('Маршрут не найден — уточните адреса погрузки и назначения', true);
+  }
+}
+
+function debounceRoute(){
+  clearTimeout(routeDebounceTimer);
+  routeDebounceTimer = setTimeout(updateRoute, 700);
+}
+
+bindAddressSuggest(fromAddrEl, document.getElementById('fromSuggest'));
+bindAddressSuggest(toAddrEl, document.getElementById('toSuggest'));
+fromAddrEl.addEventListener('blur', ()=> setTimeout(updateRoute, 200));
+toAddrEl.addEventListener('blur', ()=> setTimeout(updateRoute, 200));
+
+function useGeolocation(){
+  if(!navigator.geolocation){ alert('Геолокация не поддерживается этим браузером.'); return; }
+  if(window.isSecureContext === false){
+    alert('Браузер блокирует геолокацию: страница должна открываться по https:// (или с localhost).');
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    pos=>{
+      const lat = pos.coords.latitude, lng = pos.coords.longitude;
+      fromAddrEl.value = `Текущее местоположение (${lat.toFixed(5)}, ${lng.toFixed(5)})`;
+      fromAddrEl.dataset.coords = JSON.stringify([lat, lng]);
+      updateRoute();
+    },
+    err=>{
+      let msg;
+      switch(err.code){
+        case err.PERMISSION_DENIED: msg = 'Доступ к геолокации запрещён. Разрешите его в настройках браузера и попробуйте снова.'; break;
+        case err.POSITION_UNAVAILABLE: msg = 'Не удалось определить координаты устройства.'; break;
+        case err.TIMEOUT: msg = 'Определение местоположения заняло слишком много времени. Попробуйте ещё раз.'; break;
+        default: msg = 'Не удалось определить местоположение: ' + err.message;
+      }
+      alert(msg);
+    },
+    { enableHighAccuracy:true, timeout:10000, maximumAge:0 }
+  );
+}
+
+/* ---------- Reviews filter ---------- */
+let currentReviewFilter = 'all';
+function filterReviews(el, cat){
+  currentReviewFilter = cat;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('#reviewsGrid .review-card').forEach(card=>{
+    const cats = (card.dataset.cat || 'all').split(' ');
+    card.style.display = (cat==='all' || cats.includes(cat)) ? '' : 'none';
+  });
+}
+
+/* ---------- Star rating selector ---------- */
+let selectedRating = 0;
+const starRatingEl = document.getElementById('starRating');
+if (starRatingEl){
+  const starEls = starRatingEl.querySelectorAll('span');
+  function paintStars(n){
+    starEls.forEach(s => s.classList.toggle('filled', parseInt(s.dataset.value) <= n));
+  }
+  starEls.forEach(s=>{
+    s.addEventListener('mouseenter', ()=> paintStars(parseInt(s.dataset.value)));
+    s.addEventListener('click', ()=>{
+      selectedRating = parseInt(s.dataset.value);
+      paintStars(selectedRating);
+    });
+  });
+  starRatingEl.addEventListener('mouseleave', ()=> paintStars(selectedRating));
+}
+
+/* ---------- Review request (moderation via WhatsApp) ---------- */
+function submitReview(){
+  const nameEl = document.getElementById('reviewName');
+  const districtEl = document.getElementById('reviewDistrict');
+  const textEl = document.getElementById('reviewText');
+  const dtpEl = document.getElementById('reviewDtp');
+  const name = nameEl.value.trim();
+  const district = districtEl.value.trim();
+  const text = textEl.value.trim();
+  if(!name || !text){
+    alert('Заполните имя и текст отзыва.');
+    return;
+  }
+  if(selectedRating === 0){
+    alert('Поставьте оценку от 1 до 5 звёзд.');
+    return;
+  }
+  contactDispatch(
+    'whatsapp',
+    'Отзыв с сайта (на модерацию)\n' +
+    'Имя: ' + name + '\n' +
+    'Район: ' + (district || 'не указан') + '\n' +
+    'Оценка: ' + selectedRating + '/5\n' +
+    (dtpEl.checked ? 'После ДТП: да\n' : '') +
+    'Текст: ' + text
+  );
+  nameEl.value = '';
+  districtEl.value = '';
+  textEl.value = '';
+  dtpEl.checked = false;
+  selectedRating = 0;
+  if (starRatingEl) starRatingEl.querySelectorAll('span').forEach(s=>s.classList.remove('filled'));
+}
+
+/* ---------- 6. Interactive Moscow map (Яндекс Карты) ---------- */
+const districts = {
+  cao:   {name:'ЦАО',  coords:[55.7558, 37.6176], eta:'10–15 мин'},
+  sao:   {name:'САО',  coords:[55.8360, 37.5230], eta:'15–20 мин'},
+  svao:  {name:'СВАО', coords:[55.8622, 37.6296], eta:'15–22 мин'},
+  vao:   {name:'ВАО',  coords:[55.7887, 37.7854], eta:'18–25 мин'},
+  yuvao: {name:'ЮВАО', coords:[55.7000, 37.7500], eta:'18–25 мин'},
+  yuao:  {name:'ЮАО',  coords:[55.6300, 37.6800], eta:'20–28 мин'},
+  yuzao: {name:'ЮЗАО', coords:[55.6500, 37.5300], eta:'20–28 мин'},
+  zao:   {name:'ЗАО',  coords:[55.7200, 37.4000], eta:'20–28 мин'},
+  szao:  {name:'СЗАО', coords:[55.8300, 37.4100], eta:'18–25 мин'},
+  mo:    {name:'Московская область', coords:[55.7558, 37.6176], eta:'от 35 мин', isRegion:true}
+};
+
+let yMap, yTraffic, yUserPlacemark;
+const yMarkers = {};
+
+function initYandexMap(){
+  yMap = new ymaps.Map('moscow-map', {
+    center: [55.7558, 37.6176],
+    zoom: 10,
+    controls: ['zoomControl']
+  }, {
+    suppressMapOpenBlock: true
+  });
+
+  // зона обслуживания — Московская область (пунктирный круг)
+  const regionCircle = new ymaps.Circle([[55.7558, 37.6176], 60000], {
+    hintContent: 'Московская область — зона обслуживания'
+  }, {
+    strokeColor:'#ffb020', strokeWidth:1, strokeOpacity:0.6, strokeStyle:'dash',
+    fillColor:'#ffb02010'
+  });
+  regionCircle.events.add('click', ()=> flyToDistrict('mo'));
+  yMap.geoObjects.add(regionCircle);
+
+  // условная граница МКАД
+  const mkadCircle = new ymaps.Circle([[55.7558, 37.6176], 18000], {}, {
+    strokeColor:'#5aa9c9', strokeWidth:1, strokeOpacity:0.5, fillColor:'#5aa9c90c'
+  });
+  yMap.geoObjects.add(mkadCircle);
+
+  // метки округов
+  Object.keys(districts).forEach(key=>{
+    const d = districts[key];
+    if(d.isRegion) return;
+    const placemark = new ymaps.Placemark(d.coords, {
+      balloonContentHeader: `<div class="popup-title">${d.name}</div>`,
+      balloonContentBody: `<div class="popup-eta">Среднее время подачи эвакуатора: <strong>${d.eta}</strong></div>`,
+      hintContent: d.name
+    }, {
+      preset: 'islands#icon',
+      iconColor: '#ffb020'
+    });
+    yMap.geoObjects.add(placemark);
+    yMarkers[key] = placemark;
+  });
+
+  // слой пробок (реальные данные Яндекса)
+  yTraffic = new ymaps.traffic.provider.Actual({}, {infoLayerShown:false});
+  yTraffic.setMap(yMap);
+}
+
+if (typeof ymaps !== 'undefined') {
+  ymaps.ready(initYandexMap);
+} else {
+  document.getElementById('moscow-map').innerHTML =
+    '<div style="padding:40px;color:#9aa1ad;font-size:14px;">Карта не загрузилась: добавьте свой API-ключ Яндекс Карт в &lt;script src="https://api-maps.yandex.ru/2.1/?apikey=..."&gt; в конце HTML-файла.</div>';
+}
+
+function flyToDistrict(key){
+  if(!yMap) return;
+  const d = districts[key];
+  if(!d) return;
+  if(d.isRegion){
+    yMap.setCenter(d.coords, 9, {duration:600});
+  } else {
+    yMap.setCenter(d.coords, 12.5, {duration:600});
+    yMarkers[key].balloon.open();
+  }
+}
+
+function locateUser(){
+  // 1. геолокация доступна только в защищённом контексте (https, localhost, или file:// в некоторых браузерах)
+  if(!navigator.geolocation){
+    alert('Геолокация не поддерживается этим браузером.');
+    return;
+  }
+  if(window.isSecureContext === false){
+    alert('Браузер блокирует геолокацию: страница должна открываться по https:// (или с localhost). Через обычный file:// некоторые браузеры это запрещают — разместите сайт на хостинге с HTTPS.');
+    return;
+  }
+  // 2. карта Яндекса должна успеть загрузиться (нужен рабочий apikey)
+  if(typeof ymaps === 'undefined' || !yMap){
+    alert('Карта ещё не загрузилась — проверьте, что в конце HTML-файла указан рабочий apikey Яндекс Карт (сейчас может стоять заглушка ВАШ_API_КЛЮЧ).');
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    pos=>{
+      const coords = [pos.coords.latitude, pos.coords.longitude];
+      if(yUserPlacemark) yMap.geoObjects.remove(yUserPlacemark);
+      yUserPlacemark = new ymaps.Placemark(coords, {
+        balloonContent: 'Ваше местоположение'
+      }, {
+        preset: 'islands#circleIcon',
+        iconColor: '#5aa9c9'
+      });
+      yMap.geoObjects.add(yUserPlacemark);
+      yMap.setCenter(coords, 13, {duration:600});
+      yUserPlacemark.balloon.open();
+    },
+    err=>{
+      // 3. понятные сообщения по каждому коду ошибки Geolocation API
+      let msg;
+      switch(err.code){
+        case err.PERMISSION_DENIED:
+          msg = 'Доступ к геолокации запрещён. Разрешите определение местоположения для этого сайта в настройках браузера (значок замка/значок геолокации в адресной строке) и попробуйте снова.';
+          break;
+        case err.POSITION_UNAVAILABLE:
+          msg = 'Не удалось определить координаты устройства. Проверьте, включена ли геолокация в системе (Windows/macOS/телефон), и попробуйте ещё раз.';
+          break;
+        case err.TIMEOUT:
+          msg = 'Определение местоположения заняло слишком много времени. Попробуйте ещё раз.';
+          break;
+        default:
+          msg = 'Не удалось определить местоположение: ' + err.message;
+      }
+      alert(msg);
+    },
+    { enableHighAccuracy:true, timeout:10000, maximumAge:0 }
+  );
+}
+
+function toggleTraffic(){
+  if(!yTraffic) return;
+  if(yTraffic.getMap()){
+    yTraffic.setMap(null);
+    document.getElementById('trafficLevel').textContent = 'скрыты';
+  } else {
+    yTraffic.setMap(yMap);
+    document.getElementById('trafficLevel').textContent = 'по данным Яндекса';
+  }
+}
+</script>
+</body>
+</html>
